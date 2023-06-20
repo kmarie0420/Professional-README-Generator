@@ -19,7 +19,7 @@ inquirer
     {
       type: "input",
       name: "install",
-      message: "Installation?",
+      message: "Steps for Installation?",
     },
     {
       type: "input",
@@ -37,7 +37,7 @@ inquirer
     {
       type: "input",
       name: "contributing",
-      message: "Are there any contribution rules?",
+      message: "Input the Contributors",
     },
     {
       type: "input",
