@@ -2,9 +2,9 @@ const licenseChoice = (data) => {
     if(data.license === "[None]") {
         return ''
     } else if (data.license === "[MIT]") {
-        return `this is mit `
+        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
     } else if (data.license === "[Apache]") {
-        return `this is apache`
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
     }
 }
 
