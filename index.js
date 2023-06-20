@@ -1,47 +1,48 @@
 var inquirer = require("inquirer");
 const { type } = require("os");
+const generateMarkdown = require("./utils/generateMarkdown");
+const fs = require('fs');
+
 inquirer
   .prompt([
     /* Pass your questions in here */
     {
       type: "input",
-      name: "input_type",
-      message: "Title?",
+      name: "projectTitle",
+      message: "What is the Title of your Project?",
     },
     {
       type: "input",
-      name: "input_type",
-      message: "Description?",
+      name: "description",
+      message: "What is the Description of the Project?",
     },
     {
       type: "input",
-      name: "input_type",
-      message: "Table of Contents?",
-    },
-    {
-      type: "input",
-      name: "input_type",
+      name: "install",
       message: "Installation?",
     },
     {
       type: "input",
-      name: "input_type",
+      name: "usage",
       message: "Usage?",
     },
     {
-      type: "input",
-      name: "input_type",
+      type: "list",
+      name: "license",
       message: "License?",
+      choices: [
+        "[Mit License]", "[Apache]", "[None]"
+      ]
     },
     {
       type: "input",
-      name: "input_type",
-      message: "Contributing?",
+      name: "contributing",
+      message: "Are there any contribution rules?",
     },
     {
       type: "input",
-      name: "input_type",
-      message: "Tests?",
+      name: "tests",
+      message: "Please provide test instructions, if applicable?",
     },
     {
       type: "input",
@@ -49,7 +50,17 @@ inquirer
       message: "Questions",
     },
   ])
-  .then((answers) => {
+  .then((data) => {
     // Use user feedback for... whatever!!
-    console.log(answers);
+    fs.writeFile("README.md", generateMarkdown(data), function(err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(" README.md has been created!");
+      }
+    });
   })
+    .catch(function(err) {
+      console.log(err);
+    });
+    
