@@ -31,7 +31,7 @@ inquirer
       name: "license",
       message: "License?",
       choices: [
-        "[Mit License]", "[Apache]", "[None]"
+        "[MIT]", "[Apache]", "[None]"
       ]
     },
     {
@@ -46,8 +46,8 @@ inquirer
     },
     {
       type: "input",
-      name: "input_type",
-      message: "Questions",
+      name: "email",
+      message: "What is your email?",
     },
   ])
   .then((data) => {
