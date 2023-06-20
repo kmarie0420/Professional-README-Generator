@@ -17,7 +17,14 @@ ${licenseChoice(data)}`
     }
 }
 
-
+const checkTest = (data) => {
+    if(data.tests === "NONE" || data.tests === "none" || data.tests === "None") {
+        return ''
+    } else {
+        return `## Tests
+${data.tests}`
+    }
+}
 
 const generateMarkdown = (data) => {
     return `# ${data.projectTitle}
@@ -28,8 +35,7 @@ ${data.install}
 ## Contributors
 ${data.contributing}
 ${licenseSection(data)}
-## Tests
-${data.tests}
+${checkTest(data)}
 ## Questions
 If you have questions about this project, you can email me at ${data.email}
 `}

@@ -42,7 +42,7 @@ inquirer
     {
       type: "input",
       name: "tests",
-      message: "Please provide test instructions, if applicable?",
+      message: 'Please provide test instructions, if applicable? If you did not write tests for this application, type "NONE"',
     },
     {
       type: "input",
